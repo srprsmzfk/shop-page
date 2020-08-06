@@ -1,0 +1,21 @@
+<div class="container" (click)="selectItem()">
+  <div class="image">
+    <img [src]="mainImg$ | async">
+    <div class="img-selector">
+      <app-image-selector [gallery]="item.gallery"
+                          (imgChanged)="onImgChanged($event)"
+      (click)="$event.stopPropagation()">
+      </app-image-selector>
+    </div>
+  </div>
+  <div class="data">
+    <div class="title">
+      <p class="category">{{item.type}}</p>
+      <p class="name">{{item.name}}</p>
+    </div>
+    <div class="info">
+      <p class="price">${{item.price}}</p>
+      <p class="qty">на складе: {{item.qty}}</p>
+    </div>
+  </div>
+</div>

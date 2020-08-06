@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="list">
+    <div class="item" *ngFor="let cartItem of cartItems">
+      <img [src]="cartItem.item.img">
+      <div class="item-data">
+        <p class="name">{{cartItem.item.name}}</p>
+        <div class="price-summary">
+          <div class="qty">
+            <button [disabled]="cartItem.qty === 1"
+                    (click)="updateCartItem(cartItem, cartItem.qty-1)">-</button>
+            <p>{{cartItem.qty}}</p>
+            <button (click)="updateCartItem(cartItem, cartItem.qty+1)">+</button>
+          </div>
+          <p class="price">${{cartItem.item.price}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="summary">
+    <div class="price">
+      <p>Итого</p>
+      <p>${{getTotalPrice()}}</p>
+    </div>
+    <button>
+      Купить
+    </button>
+  </div>
+
+</div>

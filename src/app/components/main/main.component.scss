@@ -1,0 +1,13 @@
+section {
+  flex-grow: 1;
+}
+
+aside {
+  width: 190px;
+}
+
+:host {
+  flex-grow: 1;
+  display: flex;
+  overflow-y: auto;
+}

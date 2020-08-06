@@ -1,0 +1,7 @@
+<div class="container">
+  <app-item-page [item]="item"></app-item-page>
+  <div class="actions">
+    <button class="back" (click)="goBack()">Назад</button>
+    <button class="order" [disabled]="item.qty === 0" (click)="addToCart()">В корзину</button>
+  </div>
+</div>

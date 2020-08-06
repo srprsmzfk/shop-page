@@ -1,0 +1,5 @@
+<div class="container">
+  <div class="item" *ngFor="let item of (itemsList$ | async)">
+    <app-item-page [item]="item" (itemSelected)="onItemSelected($event)"></app-item-page>
+  </div>
+</div>

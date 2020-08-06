@@ -1,0 +1,20 @@
+<div class="container">
+  <button [disabled]="currentImg === 0" (click)="onImgClick(currentImg-1)">
+    <svg width="7" height="13" viewBox="0 0 7 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path class="arrow" d="M6.13573 0.959625L1.04039 6.54768L6.13573 12.1357" stroke="black"/>
+    </svg>
+  </button>
+  <div class="gallery-wrapper">
+    <div class="gallery">
+      <img *ngFor="let img of gallery;index as i"
+           [src]="img"
+           [ngClass]="{active: i === currentImg}"
+           (click)="onImgClick(i)">
+    </div>
+  </div>
+  <button [disabled]="currentImg === gallery.length-1" (click)="onImgClick(currentImg+1)">
+    <svg width="7" height="13" viewBox="0 0 7 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path class="arrow" d="M1.04037 0.959625L6.13571 6.54768L1.04037 12.1357" stroke="black"/>
+    </svg>
+  </button>
+</div>

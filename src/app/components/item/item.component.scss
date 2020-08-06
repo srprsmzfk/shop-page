@@ -1,0 +1,33 @@
+:host {
+  width: 100%;
+  height: 100%;
+}
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 100%;
+
+  .actions {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+
+    button {
+      height: 100px;
+      width: 500px;
+      font-size: 40px;
+      margin: 10px;
+      border: 2px solid black;
+      background-color: white;
+      outline: none;
+
+      &:active {
+        transform: scale(0.95);
+      }
+    }
+  }
+
+}

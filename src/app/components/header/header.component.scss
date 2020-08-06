@@ -1,0 +1,70 @@
+.header {
+  height: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .cart {
+    position: absolute;
+    right: 100px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    .qty {
+      height: 21px;
+      width: 21px;
+      background-color: black;
+      color: white;
+      text-align: center;
+      line-height: 22px;
+      margin-left: 8px;
+      font-weight: 500;
+      font-size: 14px;
+    }
+  }
+}
+.modal {
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.4);
+
+  .cart {
+    background-color: #2B2B2B;
+    position: absolute;
+    right: 0;
+    height: 100%;
+    width: 340px;
+    display: flex;
+    flex-direction: column;
+
+    .close {
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding-right: 40px;
+
+      button {
+        font-size: 20px;
+        border: none;
+        background-color: #2B2B2B;
+        outline: none;
+        color: white;
+
+        &:active {
+          transform: scale(0.95);
+        }
+      }
+    }
+
+    app-cart {
+      flex-grow: 1;
+    }
+  }
+}

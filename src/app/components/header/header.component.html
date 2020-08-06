@@ -1,0 +1,19 @@
+<div class="header">
+  <div class="logo">
+    <img src="../assets/img/logo.svg">
+  </div>
+  <div class="cart" (click)="openCart()">
+    <img src="../../assets/img/cart.svg">
+    <div class="qty">{{(cartItems$ | async).length}}</div>
+  </div>
+</div>
+<div #modal class="modal"
+     *ngIf="isCartOpened"
+     (click)="closeCart($event)">
+  <div class="cart">
+    <div class="close">
+      <button #closeBtn>✕</button>
+    </div>
+    <app-cart [cartItems]="cartItems$ | async" (updateItem)="onItemUpdate($event)"></app-cart>
+  </div>
+</div>

@@ -1,0 +1,27 @@
+<div class="sidebar">
+  <div class="categories">
+    <ul>
+      <li class="pointer"
+          *ngFor="let clothesType of clothesTypes; index as i"
+          [ngClass]="{active: clothesType === (currentClothesType$ | async)}"
+          (click)="selectClothesType(clothesType)">{{clothesType}}</li>
+    </ul>
+  </div>
+  <div class="sort pointer"
+       (click)="toggleSortTypeBox()">
+    <p>Сортировать</p>
+    <img src="../../assets/img/arrow.svg"
+         class="arrow"
+         [ngClass]="{opened: isSortTypeBoxOpened}">
+  </div>
+  <div class="sort-types" *ngIf="isSortTypeBoxOpened">
+    <ul>
+      <li class="pointer"
+          *ngFor="let sortType of sortTypes"
+          [ngClass]="{active: sortType === (currentSortType$ | async)}"
+          (click)="selectSortType(sortType)">
+        {{sortType}}
+      </li>
+    </ul>
+  </div>
+</div>
