@@ -1,11 +1,13 @@
 .container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  column-gap: 10px;
+  row-gap: 10px;
+  justify-items: center;
   overflow-y: auto;
   height: 100%;
-  align-content: space-between;
   padding-left: 56px;
+
   .item {
     margin: 3px 3px 20px 3px;
   }

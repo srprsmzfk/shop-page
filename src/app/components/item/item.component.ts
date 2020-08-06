@@ -43,6 +43,5 @@ export class ItemComponent implements OnInit {
           this.store.dispatch(new UpdateItem({item: this.item, qty: cartItem.qty + 1})) :
           this.store.dispatch(new AddItem({item: this.item, qty: 1}));
       });
-    // this.store.dispatch(new AddItem({item: this.item, qty: 1}));
   }
 }

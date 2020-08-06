@@ -27,8 +27,6 @@ export class ItemPageComponent implements OnInit {
   }
 
   selectItem(): void {
-    // console.log(this.item);
-    // this.router.navigate(['/item', this.item.id], {state: this.item});
     this.itemSelected.emit(this.item);
   }
 }
